@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  localstack:
+    container_name: localstack_main
+    image: localstack/localstack:3.8  # or just localstack/localstack if using a token
+    ports:
+      - "127.0.0.1:4566:4566"
+      - "127.0.0.1:4510-4559:4510-4559"
+    environment:
+      - PERSISTENCE=1 # Tells localstack to save data to disk
+      # - LOCALSTACK_AUTH_TOKEN=your_token_here (Uncomment if using the 2026 image)
+    volumes:
+      - "./localstack_data:/var/lib/localstack"
