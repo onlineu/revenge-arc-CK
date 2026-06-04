@@ -18,4 +18,5 @@ June 4th, 2026: Decluttered, Updated Security and Routed Internet connection to 
 - Security Group: Added 2 SGs: Private and Public with different inbound and outbound rules.
 - Route Tables, Subnets, Assocs, Internet Gateway, and NAT Gateway: Added a private Subnet, 2 RTs, an IGW, and a NAT Gateway, allowing EC2 Instances to access the Internet.
 - Private EC2 instance: Added a private EC2 instance, which can only be accessed via the public EC2 one.
+
 **Code has been validated and confirmed to be functional**
