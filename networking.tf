@@ -140,7 +140,6 @@ resource "aws_route_table_association" "pub_assoc" {
 }
 
 # Assoc Prv Sub - RT
-
 resource "aws_route_table_association" "prv_assoc" {
     subnet_id = aws_subnet.prv_sub.id
     route_table_id = aws_route_table.prv_rt.id
