@@ -2,6 +2,8 @@ For AWS running on LocalStack
 
 This repository serves as my dedicated, hands-on infrastructure environment focused on mastering IaC, cloud networking, and automated deployments.
 
+Check out my devlog at: doc\DEVLOG.md
+
 Tech Stack and Local Env:
 - IaC Engine: Terraform
 - Platform Core: AWS
