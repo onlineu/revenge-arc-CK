@@ -8,7 +8,8 @@ resource "aws_iam_role" "prv_inst_app_iam" {
             Action = "sts:AssumeRole"
             Effect = "Allow"
             Principal = {
-                Service = "ec2.amazonaws.com"
+                Service = ["ec2.amazonaws.com", 
+                "lambda.amazonaws.com"]
             }
         }]
     })
