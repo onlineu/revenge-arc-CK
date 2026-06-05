@@ -1,0 +1,63 @@
+# VPC
+resource "aws_vpc" "test_vpc" {
+    cidr_block = "10.0.0.0/16"
+    enable_dns_hostnames = true
+
+    tags = {
+        Name = "test"
+    }
+}
+
+/*      **NOTICE_1** 
+
+Should only use for real AWS, not simulated
+
+data "http" "my_ip" {
+    url = "https://checkip.amazonaws.com/"
+} 
+
+*/
+
+# Public Subnet
+resource "aws_subnet" "pub_sub" {
+    vpc_id = aws_vpc.test_vpc.id
+    cidr_block = "10.0.0.0/24"
+    availability_zone = "us-east-1a"
+
+    tags = {
+        Name = "pub-sub"
+    }
+}
+
+# Private Subnet 
+resource "aws_subnet" "prv_sub" {
+    vpc_id = aws_vpc.test_vpc.id
+    cidr_block = "10.0.1.0/24"
+    availability_zone = "us-east-1a"
+
+    tags = {
+        Name = "prv_sub"
+    }
+}
+
+# Internet Gateway
+resource "aws_internet_gateway" "test_igw" {
+    vpc_id = aws_vpc.test_vpc.id
+
+    tags = {
+        Name = "test_igw"
+    }
+}
+
+# VPC Gateway Endpoint
+resource "aws_vpc_endpoint" "dyn_db_gwe" {
+    vpc_id = aws_vpc.test_vpc.id
+    service_name = "com.amazonaws.us-east-1.dynamodb"
+    vpc_endpoint_type = "Gateway"
+
+    route_table_ids = [aws_route_table.pub_rt.id, aws_route_table.prv_rt.id]
+
+    tags = {
+        Name = "dyn_db_gwe"
+    }
+}

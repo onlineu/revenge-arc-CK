@@ -9,6 +9,7 @@ services:
       - "127.0.0.1:4510-4559:4510-4559"
     environment:
       - PERSISTENCE=1 # Tells localstack to save data to disk
+      - LAMBDA_EXECUTOR=local
       # - LOCALSTACK_AUTH_TOKEN=your_token_here (Uncomment if using the 2026 image)
     volumes:
       - "./localstack_data:/var/lib/localstack"
