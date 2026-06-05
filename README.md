@@ -23,6 +23,7 @@ June 5th, 2026: Lambda, Python, and IAM
 - Lambda: Created a Lambda function which will execute the Python file.
 - Python: Created a Python file stored in Lambda which will automatically generate a text file and move it to the S3 Bucket.
 - IAM: Created an IAM role for Lambda, S3, and DynamoDB. Bridged DNMDB and S3 to the private EC2 instance.
++ Not sure what to do with SQS and SNS but I will work on it tomorrow or next week.
 
 *I could not confirm if Lambda is going to work or not due to 500 InternalError and ResourceConflictException. However, according to https://app.localstack.cloud/, it should work in a real environment. The code was validated via "tflocal validate"*
 
