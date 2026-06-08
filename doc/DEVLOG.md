@@ -24,4 +24,10 @@ June 5th, 2026: Lambda, Python, and IAM
 - IAM: Created an IAM role for Lambda, S3, and DynamoDB. Bridged DNMDB and S3 to the private EC2 instance.
 + Not sure what to do with SQS and SNS but I will work on it tomorrow or next week.
 
+June 8th, 2026: SQS-SNS, TGs and SOS:
+- Added an SQS-SNS function which will sends notification if a file is sent and stored in S3.
+- Added Target Groups for an ALB, deal with that tomorrow.
++ Tried fixing LocalStack and the container, failed.
++ Feel kinda lazy after the weekends and I'm running out of things to add.
+
 *I could not confirm if Lambda is going to work or not due to 500 InternalError and ResourceConflictException. However, according to https://app.localstack.cloud/, it should work in a real environment. The code was validated via "tflocal validate"*
