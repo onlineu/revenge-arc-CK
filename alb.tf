@@ -4,7 +4,7 @@ resource "aws_lb" "test_alb" {
     internal = false
     load_balancer_type = "application"
     security_groups = [aws_security_group.pub_sg.id]
-    subnets = [aws_subnet.pub_sub.id, aws_subnet.prv_sub.id]
+    subnets = [aws_subnet.pub_sub_a.id, aws_subnet.pub_sub_b.id]
 }
 
 # Listener

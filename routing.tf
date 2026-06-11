@@ -23,9 +23,15 @@ resource "aws_route_table" "prv_rt" {
 
 # Assoc Pub Sub - RT
 resource "aws_route_table_association" "pub_assoc" {
-    subnet_id = aws_subnet.pub_sub.id
+    subnet_id = aws_subnet.pub_sub_a.id
     route_table_id = aws_route_table.pub_rt.id
 }
+
+resource "aws_route_table_association" "pub_assoc" {
+    subnet_id = aws_subnet.pub_sub_b.id
+    route_table_id = aws_route_table.pub_rt.id
+}
+
 
 # Assoc Prv Sub - RT
 resource "aws_route_table_association" "prv_assoc" {
