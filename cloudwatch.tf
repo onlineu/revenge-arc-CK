@@ -1,7 +1,9 @@
 resource "aws_cloudwatch_metric_alarm" "lambda_alarm" {
     alarm_name = "lambda-file-gen-error"
+
     comparison_operator = "GreaterThanThreshold"
     evaluation_periods = 1
+
     metric_name = "Errors"
     namespace = "AWS/Lambda"
     period = 60

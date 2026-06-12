@@ -9,7 +9,25 @@ resource "aws_dynamodb_table" "test_table" {
     }
     ttl {
       attribute_name = "TimeToLive"
-      enabled = false
+      enabled = true
+    }
+
+    point_in_time_recovery {
+      enabled = true
+    }
+    
+    server_side_encryption {
+      enabled = true
+    }
+    
+    global_secondary_index {
+      name = "EmailIndex"
+      projection_type = "ALL"
+
+      key_schema {
+        attribute_name = "email"
+        key_type = "HASH"
+      }
     }
 
     tags = {

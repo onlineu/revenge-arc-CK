@@ -7,7 +7,7 @@ resource "aws_s3_bucket" "test" {
     }
 }
 
-resource "aws_s3_public_access_block" "storage_privacy" {
+resource "aws_s3_bucket_public_access_block" "storage_privacy" {
     bucket = aws_s3_bucket.test.id
 
     block_public_acls = true
