@@ -35,4 +35,9 @@ June 9th and June 11th, 2026: ALB, NLB, and an additional subnet:
 - Bored and unemployed so I added an NLB for public instance SSH port.
 - Added a new public subnet to make the ALB and NLB work, the new subnet has nothing besides an attached RT.
 - Added CloudWatch to look out for any execution error from Lambda.
+
+June 12th, 2026: Secured and Scaled
+- Blocked public access for the S3 Bucket.
+- DynamoDB: Enabled TTL, added SSE and GSI.
+- Added an ASG and a launch template.
 *I could not confirm if Lambda is going to work or not due to 500 InternalError and ResourceConflictException. However, according to https://app.localstack.cloud/, it should work in a real environment. The code was validated via "tflocal validate"*
