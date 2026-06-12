@@ -1,8 +1,8 @@
 resource "aws_lb_target_group" "pub_inst_ssh" {
-    name = "pub_inst_ssh"
+    name = "pub-inst-ssh"
     port = 22
-    protocol = "SSH"
-    vpc_id = aws_vpc.test_vpc
+    protocol = "TCP"
+    vpc_id = aws_vpc.test_vpc.id
 }
 
 resource "aws_lb_target_group" "pub_inst_http" {

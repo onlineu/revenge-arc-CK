@@ -22,12 +22,12 @@ resource "aws_route_table" "prv_rt" {
 }
 
 # Assoc Pub Sub - RT
-resource "aws_route_table_association" "pub_assoc" {
+resource "aws_route_table_association" "pub_assoc_a" {
     subnet_id = aws_subnet.pub_sub_a.id
     route_table_id = aws_route_table.pub_rt.id
 }
 
-resource "aws_route_table_association" "pub_assoc" {
+resource "aws_route_table_association" "pub_assoc_b" {
     subnet_id = aws_subnet.pub_sub_b.id
     route_table_id = aws_route_table.pub_rt.id
 }
@@ -52,7 +52,7 @@ resource "aws_eip" "nat_eip" {
 # NAT Gateway
 resource "aws_nat_gateway" "prv_inst_nat" {
     allocation_id = aws_eip.nat_eip.id
-    subnet_id = aws_subnet.pub_sub.id
+    subnet_id = aws_subnet.pub_sub_a.id
 
     tags = {
         Name = "prv_inst_nat"

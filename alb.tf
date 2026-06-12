@@ -36,11 +36,12 @@ resource "aws_lb_listener_rule" "route_lambda" {
     }
 }
 
-resource "aws_lb_target_group_attachment" "http_inst_attach" {
+/* resource "aws_lb_target_group_attachment" "http_inst_attach" {
     target_group_arn = aws_lb_target_group.pub_inst_http.arn
     target_id = aws_instance.pub_inst.id
     port = 80
 }
+*/
 
 resource "aws_lambda_permission" "alb_lambda_perm" {
     statement_id = "AllowExecutionFromALB"

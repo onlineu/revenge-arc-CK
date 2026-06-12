@@ -1,13 +1,13 @@
 # NLB
 resource "aws_lb" "ssh_nlb" {
-    name = "ssh_nlb"
+    name = "ssh-nlb"
     internal = false
     load_balancer_type = "network"
     subnets = [aws_subnet.pub_sub_a.id, aws_subnet.pub_sub_b.id]
 }
 
 resource "aws_lb_listener" "ssh_listener" {
-    load_balancer_arn = aws_lb.test_alb.arn
+    load_balancer_arn = aws_lb.ssh_nlb.arn
     port = "22"
     protocol = "TCP"
 
