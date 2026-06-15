@@ -1,6 +1,6 @@
 resource "aws_s3_bucket" "test" {
-    bucket = "local-test-bucket"
-
+    bucket = "aws-test-bucket-unique0-6767"
+    force_destroy = false
     tags = {
         Name = "Test Storage"
         Environment = "LocalTesting"

@@ -7,6 +7,10 @@ resource "aws_dynamodb_table" "test_table" {
         name = "id"
         type = "S"
     }
+    attribute {
+      name = "email"
+      type = "S"
+    }
     ttl {
       attribute_name = "TimeToLive"
       enabled = true
