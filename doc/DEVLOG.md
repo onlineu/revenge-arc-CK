@@ -46,4 +46,8 @@ June 15th, 2026: Ready For Deployment
 - Reorganised the files.
 *Live AWS version has been confirmed to be fully functional*
 
+June 17th, 2026: Secured, secured, and secured
+- Added SSE for S3 bucket.
+- Used lifecycle to enforce rules for private EC2 instance.
+- Added a VPC Gateway Endpoint for S3 bucket.
 *I could not confirm if Lambda is going to work or not due to 500 InternalError and ResourceConflictException. However, according to https://app.localstack.cloud/, it should work in a real environment. The code was validated via "tflocal validate"*
