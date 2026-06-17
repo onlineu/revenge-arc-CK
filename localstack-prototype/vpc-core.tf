@@ -71,3 +71,15 @@ resource "aws_vpc_endpoint" "dyn_db_gwe" {
         Name = "dyn_db_gwe"
     }
 }
+
+resource "aws_vpc_endpoint" "s3_bck_gwe" {
+    vpc_id = aws_vpc.test_vpc.id
+    service_name = "com.amazonaws.us-east-1.s3"
+    vpc_endpoint_type = "Gateway"
+
+    route_table_ids = [aws_route_table.prv_rt.id]
+
+    tags = {
+        Name = "s3_bck_gwe"
+    }
+}

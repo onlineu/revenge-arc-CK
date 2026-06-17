@@ -1,13 +1,4 @@
 # Public EC2 Instance
-variable "prv_inst_type" {
-    type = string
-    default = "t3.micro"
-}
-
-variable "prv_inst_pub_ip" {
-    type = bool
-    default = false
-}
 
 resource "aws_instance" "pub_inst" {
     ami = "ami-0a2b6680ef4ed0596"
@@ -19,6 +10,17 @@ resource "aws_instance" "pub_inst" {
     tags = {  
         Name = "pub_inst"
     }
+}
+
+
+variable "prv_inst_type" {
+    type = string
+    default = "t3.micro"
+}
+
+variable "prv_inst_pub_ip" {
+    type = bool
+    default = false
 }
 
 # Private EC2 Instance
