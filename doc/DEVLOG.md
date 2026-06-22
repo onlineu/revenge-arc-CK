@@ -50,4 +50,9 @@ June 17th, 2026: Secured, secured, and secured
 - Added SSE for S3 bucket.
 - Used lifecycle to enforce rules for private EC2 instance.
 - Added a VPC Gateway Endpoint for S3 bucket.
+
+June 22nd, 2026: Surveillance of Civilian
+- Added a Flow Log to capture traffics and store it to a brand new dedicated S3 bucket.
+- Added an S3 bucket for Flow Log and a new private subnet.
+- Added a Network ACL for the two private subnets.
 *I could not confirm if Lambda is going to work or not due to 500 InternalError and ResourceConflictException. However, according to https://app.localstack.cloud/, it should work in a real environment. The code was validated via "tflocal validate"*

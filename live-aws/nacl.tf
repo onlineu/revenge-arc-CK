@@ -6,7 +6,7 @@ resource "aws_network_acl" "prv_sub_acl" {
         protocol = "tcp"
         rule_no = 100
         action = "allow"
-        cidr_block = aws_subnet.pub_sub_a.cidr_block
+        cidr_block = aws_vpc.test_vpc.cidr_block
         from_port = 80
         to_port = 80
     }
@@ -15,7 +15,7 @@ resource "aws_network_acl" "prv_sub_acl" {
         protocol = "tcp"
         rule_no = 110
         action = "allow"
-        cidr_block = aws_vpc.test_vpc.cidr_block
+        cidr_block = "0.0.0.0/0"
         from_port = 1024
         to_port = 65535
     }
@@ -24,7 +24,7 @@ resource "aws_network_acl" "prv_sub_acl" {
         protocol = "tcp"
         rule_no = 100
         action = "allow"
-        cidr_block = aws_subnet.pub_sub_a.cidr_block
+        cidr_block = aws_vpc.test_vpc.cidr_block
         from_port = 1024
         to_port = 65535
     }
@@ -33,7 +33,7 @@ resource "aws_network_acl" "prv_sub_acl" {
         protocol = "tcp"
         rule_no = 120
         action = "allow"
-        cidr_block = aws_vpc.test_vpc.cidr_block
+        cidr_block = "0.0.0.0/0"
         from_port = 443
         to_port = 443
     }
