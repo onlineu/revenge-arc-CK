@@ -1,6 +1,6 @@
 resource "aws_network_acl" "prv_sub_acl" {
     vpc_id = aws_vpc.test_vpc.id
-    subnet_ids = [aws_subnet.prv_sub_a, aws_subnet.prv_sub_b]
+    subnet_ids = [aws_subnet.prv_sub_a.id, aws_subnet.prv_sub_b.id]
 
     ingress {
         protocol = "tcp"

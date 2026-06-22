@@ -17,7 +17,7 @@ resource "aws_s3_bucket_public_access_block" "storage_privacy" {
     restrict_public_buckets = true
 }
 
-resource "aws_s3_bucket_server_side_encryption" "s3_encryption" {
+resource "aws_s3_bucket_server_side_encryption_configuration" "s3_encryption" {
     bucket = aws_s3_bucket.test.id
 
     rule {
