@@ -1,9 +1,10 @@
 resource "aws_s3_bucket" "test" {
     bucket = "aws-test-bucket-unique0-6767"
     force_destroy = false
+
     tags = {
         Name = "Test Storage"
-        Environment = "LocalTesting"
+        Environment = "LiveTesting"
     }
 }
 
@@ -23,5 +24,14 @@ resource "aws_s3_bucket_server_side_encryption" "s3_encryption" {
         apply_server_side_encryption_by_default {
             sse_algorithm = "AES256"
         }
+    }
+}
+
+resource "aws_s3_bucket" "vpc_flow_logs_bucket" {
+    bucket = "aws-flow-logs-unique1-6767"
+    force_destroy = true
+
+    tags = {
+        Name = "Flow Logs Storage"
     }
 }
