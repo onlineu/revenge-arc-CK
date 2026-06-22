@@ -17,7 +17,7 @@ resource "aws_lambda_function" "file_generator_py" {
 
     /* 
     vpc_config {
-      subnet_ids = [aws_subnet.prv_sub.id]
+      subnet_ids = [aws_subnet.prv_sub_a.id]
       security_group_ids = [aws_security_group.prv_sg.id]
     }
     */

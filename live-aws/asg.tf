@@ -9,7 +9,7 @@ resource "aws_autoscaling_group" "test_asg" {
         version = "$Latest"
     }
 
-    vpc_zone_identifier = [aws_subnet.prv_sub.id]
+    vpc_zone_identifier = [aws_subnet.prv_sub_a.id]
 
     target_group_arns = [aws_lb_target_group.pub_inst_ssh.arn, aws_lb_target_group.pub_inst_http.arn]
 
